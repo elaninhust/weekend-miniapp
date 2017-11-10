@@ -14,6 +14,17 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+const getHeight = () => {
+  let height = 0;
+  wx.getSystemInfo({
+    success: function(res) {
+      height =  res.windowHeight;
+    },
+  });
+  return height;
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  getHeight: getHeight
 }
